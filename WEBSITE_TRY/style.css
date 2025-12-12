@@ -1,0 +1,1349 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: #0b0b0b;
+	overflow-x: hidden;
+}
+
+
+.navbar {
+	width: 100%;
+	padding: 30px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+	z-index: 110;
+  background-color: #0b0b0b;
+}
+
+.navbar a {
+	position: relative;
+	background: #0b0b0b;
+	color: #F06E38;
+	font-family: "Lekton";
+	text-decoration: none;
+	font-size: 16px;
+  user-select: none;
+  -webkit-user-drag: none;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  align-items: center;
+}
+
+.index-nav-layout {
+  width: 100%;
+  justify-content: space-between;
+  padding: 0;
+}
+
+.mobile-logo {
+  display: none;
+}
+
+/* DROPDOWN */
+.dropdown {
+	position: relative;
+}
+
+.dropbtn {
+  display: inline-block;
+  padding: 10px 15px;
+  pointer-events: auto;
+  cursor: default;
+}
+
+.dropdown-content {
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(240, 110, 56, 0.8);
+  padding: 8px;
+  width: 260px;
+  opacity: 0;
+  pointer-events: none;
+  border-radius: 5px;
+  transition: opacity 0.3s ease;
+  z-index: 110;
+}
+
+.dropdown-content li {
+  list-style: none;
+  background: rgba(0, 0, 0, 0.85);
+  margin: 5px 0;
+}
+
+.dropdown-content li a {
+  display: block;
+  padding: 12px 18px;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  text-align: left;
+  border-radius: 5px;
+}
+
+.dropdown-content li a:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 5px;
+}
+
+.dropdown:hover .dropdown-content {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.navbar a::before, 
+.navbar a::after {
+  content: "";
+  opacity: 0;
+  transition: 0.3s ease;
+}
+
+.navbar a::before {
+  content: "[ ";
+  position: absolute;
+  left: -8px;
+}
+
+.navbar a::after {
+  content: " ]";
+  position: absolute;
+  right: -8px;
+}
+
+.navbar a:hover::before,
+.navbar a:hover::after {
+  opacity: 1;
+}
+
+.navbar a.active::before,
+.navbar a.active::after {
+    opacity: 1 !important;
+}
+
+.dropdown-content a:hover::before,
+.dropdown-content a:hover::after {
+  content: none !important;
+  opacity: 0 !important;
+}
+
+/* BANNER */
+
+.banner {
+	display: block;
+	width: 100%;
+	text-align: center;
+	margin-top: 20px;
+  user-select: none;
+  -webkit-user-drag: none;
+  cursor: pointer;
+}
+
+.banner img {
+	width: 100%;
+  max-width: 1530px;
+	height: auto;
+  user-select: none;
+  -webkit-user-drag: none;
+  pointer-events: none;
+}
+
+/* SECTION TITLE */
+
+.section-title {
+  color: #F06E38;
+  font-family: 'Antique Olive';
+  text-align: center;
+  font-size: 38px;
+  margin-top: 40px;
+  letter-spacing: 2px;
+}
+
+.section-subtitle {
+  color: #ffffffcc;
+  font-family: 'Lekton';
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+/* TRAILER GRID */
+
+.trailer-grid {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  padding: 40px 0;
+}
+
+.trailer-card {
+  position: relative;
+  width: 700px;
+  height: 450px;
+  border-radius: 22px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  transition: 0.25s ease;
+  background: #0b0b0b;
+}
+
+.trailer-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 25px 45px rgba(0,0,0,0.4);
+}
+
+.trailer-card .thumb {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 22px;
+  z-index: 3;
+  transition: opacity 0.4s ease;
+  user-select: none;
+  -webkit-user-drag: none;
+  cursor: pointer;
+}
+
+.trailer-card .trailer-frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 22px;
+  z-index: 1;
+  pointer-events: none; /* Inactive until clicked */
+}
+
+/* TRAILER WRAPPER */
+.trailer-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* LABEL UNDER TRAILER */
+.trailer-label {
+  margin-top: 12px;
+  font-family: 'Lekton';
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.trailer-label span {
+  color: #F06E38; /* highlight the movie title */
+}
+
+.trailer-text {
+  text-decoration: none;
+}
+
+/* ABOUT PAGE */
+
+.about-us {
+  color: #F06E38;
+  font-family: 'Antique Olive';
+  text-align: center;
+  font-size: 35px;
+  margin-top: 15px;
+  letter-spacing: 2px;
+}
+
+.aboutus-meraki {
+  color: white;
+  font-family: 'Lekton';
+  text-align: center;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+/* CONTACT PAGE */
+
+.contact-us {
+  color: #F06E38;
+  font-family: 'Antique Olive';
+  text-align: center;
+  font-size: 35px;
+  margin-top: 15px;
+  letter-spacing: 2px;
+}
+
+/* CONTACT PAGE LAYOUT */
+.contact-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 40px auto;
+    padding: 30px;
+    max-width: 1200px;
+    color: white;
+}
+
+/* ONE BIG CONTACT BOX */
+.contact-box {
+    width: 90%;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 30px;
+    background: white;
+    display: flex;
+    gap: 40px;
+    border-radius: 20px;
+}
+
+/* LEFT SIDE */
+.contact-left {
+    width: 35%;
+    padding: 25px;
+}
+
+.contact-left h3 {
+    font-family: 'Lekton';
+    color: black;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.email-display {
+    font-family: 'Lekton';
+    color: #F06E38;
+    font-size: 16px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.email-center {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.email-icon {
+    font-size: 60px;
+    margin-bottom: 10px;
+    color: #F06E38;
+}
+
+/* RIGHT SIDE (FORM) */
+.contact-right {
+    width: 65%;
+    padding: 20px;
+}
+
+.form-title {
+    font-family: 'Lekton';
+    color: #F06E38;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.form-desc {
+    font-family: 'Lekton';
+    color: #F06E38;
+    margin-bottom: 20px;
+}
+
+/* FORM STYLING */
+.input-row {
+    display: flex;
+    gap: 20px;
+    padding-bottom: 10px;
+}
+
+.input-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    background: #f1f1f1;
+    color: black;
+    border: 2px solid transparent;
+    font-family: 'Lekton';
+}
+
+input:focus, textarea:focus {
+    border-color: #F06E38;
+    outline: none;
+}
+
+textarea {
+    resize: none;
+    height: 130px;
+}
+
+/* ERRORS */
+.error {
+    color: #ff4444;
+    font-family: 'Lekton';
+    font-size: 13px;
+    height: 14px;
+}
+
+/* SUBMIT BUTTON */
+.submit-btn {
+    width: 150px;
+    background: #F06E38;
+    padding: 5px;
+    font-family: 'Lekton';
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.submit-btn:hover {
+    background: #ff7d4b;
+}
+
+/* SUCCESS MESSAGE */
+.success-msg {
+    color: #007300;
+    margin-top: 10px;
+    font-family: 'Lekton';
+}
+
+/* MERAKI logo (left side) */
+
+.logo-link {
+  user-select: none;
+  -webkit-user-drag: none;
+  cursor: pointer;
+}
+
+.logo-link img {
+  pointer-events: none;
+}
+
+/* Musicals Page Styling */
+.musicals {
+  overflow-y: hidden;
+  height: 100vh;
+}
+
+.checked, .fa-star-half {
+  color: rgb(255, 213, 0);
+}
+
+/* Musical slider*/
+.slider {
+  height: calc(100vh - 100px);
+  margin-top: 0;
+  position: relative;
+}
+
+.slider .cards .movie {
+  position: absolute;
+  inset: 0 0 0 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: 1s;
+}
+
+.slider .cards .movie img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.slider .cards .movie::before {
+  content: '';
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-image: linear-gradient(
+    to right, #0b0b0b 10%, transparent
+  );
+}
+
+.slider .cards .movie::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 10%;
+  left: 0;
+  bottom: 0;
+  background-image: linear-gradient(
+    to top, #0b0b0b 30%, transparent
+  )
+}
+
+.slider .cards .movie .content_movie {
+  color: white;
+  font-family: 'Lekton';
+  text-align: justify;
+  position: absolute;
+  left: 10%;
+  top: 10%;
+  width: 46.3vh;
+  max-width: 80%;
+  z-index: 100;
+  bottom: 280px;
+  max-height: calc(100vh - 280px);
+  overflow-y: auto;
+  padding-right: 12px; 
+  -ms-overflow-style: none; 
+  scrollbar-width: none; 
+}
+
+.slider .cards .movie .content_movie::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+.slider .cards .movie .content_movie p:nth-child(1) {
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  color: #F06E38;
+}
+
+.slider .cards .movie .content_movie h2 {
+  font-size: clamp(1rem, 10vh, 2rem);
+  margin: 0 0 0 0;
+}
+
+.slider .cards .movie .content_movie .star-rating {
+  margin-top: 40px;
+}
+
+.slider .cards .movie .content_movie .star-rating p {
+  color: #ffffff;
+}
+
+.slider .cards .movie .content_movie .instruction {
+  margin-top: 20px;
+  color: #ffffff;
+  font-size: 16px;
+}
+
+.slider .cards .movie.active {
+  opacity: 1;
+  z-index: 10;
+}
+
+@keyframes showMovie {
+    to{
+        transform: translateY(0);
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+
+.slider .cards .movie.active p:nth-child(1),
+.slider .cards .movie.active h2,
+.slider .cards .movie.active p:nth-child(3),
+.slider .cards .movie.active .instruction {
+    transform: translateY(30px);
+    filter: blur(20px);
+    opacity: 0;
+    animation: showMovie .5s .7s ease-in-out 1 forwards;
+}
+
+.slider .cards .movie.active .categ {
+  color: #ff7c3a !important;
+}
+
+.slider .list .movie.active h2 {
+  animation-delay: 800ms;
+}
+
+.slider .list .item.active p:nth-child(3){
+    animation-duration: 1.3s;
+}
+
+.arrows{
+    position: absolute;
+    top: 68%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+}
+.arrows button{
+    background-color: rgba(255, 136, 0, 0.523);
+    border: none;
+    font-family: 'Lekton';
+    width: clamp(2.7rem, 4vh, 3rem);
+    height: clamp(2.7rem, 4vh, 3rem);
+    border-radius: 5px;
+    font-size: x-large;
+    color: #eee;
+    transition: 0.5s;
+    user-select: none;
+    -webkit-user-drag: none;
+    cursor: pointer;
+}
+.arrows button:hover{
+    background-color: #ff8400;
+    color: black;
+}
+.thumbnail{
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 11;
+  display: flex;
+  gap: 30px;
+  width: 100%;
+  height: 200px;
+  padding: 0 50px;
+  box-sizing: border-box;
+  overflow: visible;
+  justify-content: center;
+}
+
+.thumbnail::-webkit-scrollbar{
+    width: 0;
+}
+.thumbnail .movie{
+    width: 150px;
+    height: 220px;
+    filter: brightness(.5);
+    transition: 0.5s;
+    flex-shrink: 0;
+    transition: transform 0.8s, filter 0.9s;
+}
+
+.thumbnail .movie:hover {
+  transform: scale(1.10);
+  filter: brightness(1.2);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.thumbnail .movie img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    user-select: none;
+    -webkit-user-drag: none;
+    cursor: pointer;
+}
+
+.thumbnail .movie.active{
+    filter: brightness(1.2);
+    transform: scale(1.10);
+}
+.thumbnail .movie .content{
+    position: absolute;
+    inset: auto 10px 10px 10px;
+}
+
+/* Modal Styling */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+  background-color: #1a1a1a;
+  margin: 5% auto;
+  padding: 30px;
+  border: 2px solid #F06E38;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 800px;
+  color: white;
+  font-family: 'Lekton';
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-content::-webkit-scrollbar {
+  width: 10px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+  background: #b94412ad;
+  border-radius: 10px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background: #F06E38;
+  border-radius: 10px;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+  background: #ff8400;
+}
+
+.modal-content h2 {
+  color: #F06E38;
+  margin-bottom: 20px;
+}
+
+.modal-content .review {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.trailer-size {
+  width: 100%;
+  height: 450px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.close {
+  color: #F06E38;
+  float: right;
+  font-size: 35px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #ff8400;
+}
+
+@media screen and (max-width: 678px) {
+    .modal-content {
+        width: 95%;
+        margin: 10% auto;
+        padding: 20px;
+    }
+}
+
+/* HAMBURGER MENU */
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #F06E38;
+}
+
+/* MEDIA QUERY FOR PHONE */
+
+@media (max-width: 600px) {
+
+    /* --- Navbar & Hamburger --- */
+    .navbar {
+        padding: 20px;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #0b0b0b;
+    }
+
+    .mobile-logo {
+        display: block;
+        z-index: 201;
+    }
+
+    .hamburger {
+        display: block; /* Show hamburger */
+        z-index: 202;   /* Ensure it sits on top of the menu */
+    }
+
+    /* Transform the Hamburger to an X when active */
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* --- The Mobile Menu (Hidden by default) --- */
+    .nav-links {
+        position: fixed;
+        left: -100%; /* Hide off-screen to the left */
+        top: 0;   /* Push down below the navbar header */
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 120px;
+        background-color: #0b0b0b;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s ease-in-out;
+        z-index: 200;
+    }
+
+    /* --- 2. Mobile Menu (Drawer) --- */
+    .nav-links, 
+    .nav-links.index-nav-layout { 
+        position: fixed;
+        left: -100%;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        
+        /* Flex Layout for Menu Items */
+        display: flex;
+        flex-direction: column;
+        align-items: center;   
+        justify-content: flex-start !important; 
+        
+        gap: 30px;
+        padding-top: 100px !important; 
+        
+        background-color: #0b0b0b;
+        transition: 0.3s ease-in-out;
+        z-index: 200; 
+        overflow-y: auto; 
+    }
+
+
+    /* Apply specific styles to the Index layout on mobile to reset the desktop spacing */
+    .index-nav-layout {
+        padding: 0;
+        justify-content: flex-start;
+    }
+
+    /* Show the menu when active class is added via JS */
+    .nav-links.active {
+        left: 0;
+    }
+
+    .nav-links li {
+        margin: 0 !important;
+        width: 100%;
+        display: block;
+    }
+
+    .nav-links a {
+        font-size: 24px;
+        color: #F06E38 !important;
+        display: block;
+        font-family: 'Lekton', sans-serif;
+    }
+
+    /* HIDE the [ ] brackets on mobile menu items */
+    .nav-links a::before,
+    .nav-links a::after {
+        content: none !important;
+        display: none !important;
+    }
+
+    /* --- Mobile Dropdown Adjustments --- */
+    .dropdown-content {
+        display: none !important; /* Strictly hidden by default */
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        opacity: 1 !important; 
+        pointer-events: auto;
+        padding-top: 10px;
+        background: transparent;
+        box-shadow: none;
+        position: relative; /* Stack normally in the list */
+        top: 0;
+        left: 0;
+        transform: none;
+    }
+
+    .dropdown-content li {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin: 0; 
+        background: transparent; /* Remove any list background */
+    }
+
+    .dropdown-content li a {
+        font-family: 'Lekton', sans-serif;
+        font-size: 18px; 
+        color: #ffffff !important; /* White Text */
+        
+        display: block; 
+        width: 80%; /* Width of the box (adjust to 90% if you want it wider) */
+        padding: 12px 0; 
+        margin: 8px auto; /* Spacing between the boxes */
+        
+        text-align: center;
+        
+        /* THE DRAFT LOOK: Orange Border + Black Background */
+        background-color: #0b0b0b !important; 
+        border: 2px solid #F06E38; 
+        border-radius: 4px; /* Slight edge rounding, or set to 0 for sharp corners */
+        
+        transition: all 0.3s ease;
+    }
+
+    .dropbtn {
+      pointer-events: auto !important;
+      cursor: pointer;
+      color: #F06E38 !important; 
+    }
+
+    .dropdown-content.show {
+        display: flex !important; 
+        animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-5px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .dropdown-content li a:hover,
+    .dropdown-content li a:active {
+        background-color: #F06E38 !important; /* Fill box with Orange */
+        color: #000000 !important; /* Text turns Black */
+        border-color: #F06E38;
+        text-decoration: none;
+    }
+
+    .banner {
+      display: none;
+    }
+
+    /* --- Banner Image on Index --- */
+    .banner img {
+        width: 100%; /* Make banner responsive */
+        height: auto;
+    }
+
+    /* --- Grid Adjustments --- */
+    .trailer-card {
+        width: 100%; /* Resize cards to fit screen */
+        height: 0;
+        padding-bottom: 56.25%;
+        position: relative;
+        border-radius: 22px;
+        overflow: hidden;
+    }
+
+    .trailer-card .thumb,
+    .trailer-card .trailer-frame {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .trailer-grid {
+        padding: 20px;
+        gap: 30px;
+    }
+    
+    .trailer label {
+        font-size: 14px; 
+        margin-top: 15px;
+    }
+
+    .section-subtitle {
+        font-size: 14px;
+        padding: 0 20px; 
+    }
+
+    .trailer-wrapper {
+        width: 100%; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* ABOUT US */
+    .aboutus-meraki {
+        padding: 0 25px;
+        text-align: center;
+        font-size: 14px;
+    }
+
+    /* --- Contact Page Mobile --- */
+    .contact-box {
+        flex-direction: column;
+        width: 90%;
+        margin: 20px auto;
+        padding: 10px;
+    }
+    
+    .contact-left, .contact-right {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .contact-container {
+        padding: 0;
+        margin: 20px 0;
+    }
+}
+
+/* CONTACT ADJUSTMENTS */
+@media (max-width: 600px) {
+    * {
+        --black: rgb(0, 0, 0);
+        --white: rgb(255, 255, 255);
+        --orange: rgb(240, 110, 56);
+    }
+
+    body {
+        width: 100%;
+        height: auto;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    p {
+        font-size: calc(1rem + 1vw);
+    }
+
+    .box {
+        padding: 1.5rem;
+    }
+
+    .navbar {
+        padding: 15px;
+        flex-wrap: wrap;
+    }
+
+    .navbar a {
+        font-size: 14px;
+    }
+
+    .banner img {
+        width: 100%;
+    }
+
+    .section-title {
+        font-size: 24px;
+        margin-top: 20px;
+    }
+
+    .section-subtitle {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    .trailer-grid {
+        gap: 1rem;
+        padding: 20px 10px;
+    }
+
+    .trailer-card {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16/9;
+    }
+
+    .contact-box {
+        width: 95%;
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+        margin: 30px auto;
+    }
+
+    .contact-left {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .contact-right {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .email-icon, .phone-icon {
+        font-size: 40px;
+    }
+
+    .form-title {
+        font-size: 20px;
+    }
+
+    .input-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .contact-us {
+        font-size: 24px;
+    }
+
+    .about-us {
+        font-size: 24px;
+    }
+
+    .slider .cards .movie .content_movie {
+        left: 5%;
+        top: 15%;
+        width: 90%;
+        max-width: 90%;
+    }
+
+    .modal-content {
+        width: 90%;
+        padding: 15px;
+    }
+
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+
+    .banner img {
+        width: 100%;
+    }
+
+    .section-title {
+        font-size: 32px;
+        margin-top: 30px;
+    }
+
+    .section-subtitle {
+        font-size: 16px;
+        margin-bottom: 25px;
+    }
+
+    .trailer-grid {
+        gap: 2rem;
+        padding: 30px 20px;
+    }
+
+    .trailer-card {
+        width: 500px;
+        height: 350px;
+    }
+
+    .contact-box {
+        width: 95%;
+        flex-direction: column;
+        gap: 25px;
+        padding: 25px;
+    }
+
+    .contact-left {
+        width: 100%;
+        padding: 20px;
+        flex-direction: row;
+        justify-content: space-around;
+        gap: 20px;
+    }
+
+    .contact-right {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .email-center, .phone-center {
+        margin-top: 10px;
+    }
+
+    .email-icon, .phone-icon {
+        font-size: 50px;
+    }
+
+    .form-title {
+        font-size: 23px;
+    }
+
+    .input-row {
+        gap: 15px;
+    }
+
+    .contact-us {
+        font-size: 30px;
+    }
+
+    .about-us {
+        font-size: 30px;
+    }
+
+    .modal-content {
+        width: 85%;
+        max-width: 700px;
+    }
+
+    .dropdown-content {
+        width: 240px;
+    }
+
+    .card {
+        width: 250px;
+        height: 350px;
+    }
+}
+
+
+@media (min-width: 1025px) {
+
+    .banner img {
+        width: 1530px;
+    }
+
+    .section-title {
+        font-size: 38px;
+    }
+
+    .section-subtitle {
+        font-size: 18px;
+    }
+
+    .trailer-grid {
+        gap: 3rem;
+        padding: 40px 0;
+    }
+
+    .trailer-card {
+        width: 700px;
+        height: 450px;
+    }
+
+    .contact-box {
+        width: 90%;
+        max-width: 1200px;
+        flex-direction: row;
+        gap: 40px;
+    }
+
+    .contact-left {
+        width: 35%;
+        padding: 25px;
+        flex-direction: column;
+    }
+
+    .contact-right {
+        width: 65%;
+        padding: 20px;
+    }
+
+    .email-icon, .phone-icon {
+        font-size: 60px;
+    }
+
+    .form-title {
+        font-size: 26px;
+    }
+
+    .modal-content {
+        width: 80%;
+        max-width: 800px;
+    }
+}
+
+/* GENRE PAGES ADJUSTMENTS */
+@media (max-width: 600px) {
+    .musicals {
+        overflow-x: hidden;
+    }
+
+    .slider {
+        width: 100%;
+    
+    }
+
+    .thumbnail {
+      gap: 15px;
+      width: 100%;
+      padding: 20px 10px 30px 10px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      justify-content: flex-start;
+      bottom: -20px;
+      position: absolute;
+    }
+
+    .thumbnail .movie.active {
+        transform: scale(1.05);
+    }
+
+    .thumbnail .movie {
+        width: 100px;
+        height: 160px;
+        flex-shrink: 0;
+    }
+
+    .slider .cards .movie::before {
+        background-image: linear-gradient(to right, #0b0b0b 30%, transparent);
+    }
+
+    .slider .cards .movie::after {
+      background-image: linear-gradient(to top, #0b0b0b 30%, transparent);
+    }
+    
+    .slider .cards .movie .content_movie {
+      position: absolute;
+      left: 5%;
+      top: 15%;
+      width: 50% !important;
+      max-width: 50% !important;
+      padding: 10px;
+    }
+    .slider .cards .content_movie .categ {
+      letter-spacing: 0px;
+      font-size: 10px;
+      text-align: left;
+    }
+
+    .slider .cards .content_movie h2{
+      font-size: 1rem;
+      text-align: left;
+    }
+
+    .slider .cards .content_movie p,
+    .slider .cards .content_movie .instruction{
+      font-size: 10px;
+    }
+
+    .arrows {
+      top: 74%;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+    }
+    
+    .arrows button {
+      width: 40px;
+      height: 40px;
+      font-size: 18px;
+    }
+
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+
+}

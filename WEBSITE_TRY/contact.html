@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF=8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title> Meraki </title>
+	<link rel="stylesheet" href="style.css">
+	<link href='https://fonts.googleapis.com/css?family=Lekton' rel='stylesheet'>
+	<link href="https://fonts.cdnfonts.com/css/antique-olive" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+	<script src="https://www.youtube.com/iframe_api"></script>
+	<script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        
+        <nav class="navbar">
+                <a href="index.html" class="logo-link">
+                    <img src="meraki_logo.png" alt="Meraki Logo" style="height: 22px;">
+                </a>
+
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+
+                <ul class="nav-links">
+                    <li><a href="about.html">ABOUT</a></li> <li class="dropdown">
+                        <a href="anime_page.html" class="dropbtn">GENRES ▼</a>
+                        <ul class="dropdown-content">
+                            <li><a href="anime_page.html">Action Anime</a></li>
+                            <li><a href="comingofage.html">Coming of Age</a></li>
+                            <li><a href="horror.html">Horror</a></li>
+                            <li><a href="musicals.html">Musicals</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+            </nav>
+            
+    </header>
+
+       <h2 class="contact-us">CONTACT US</h2>
+
+       <div class="contact-box">
+
+            <!-- LEFT SIDE -->
+            <div class="contact-left">
+                <div class="email-center">
+                    <i class="fa-solid fa-envelope email-icon"></i>
+                    <h3>Email Address</h3>
+                    <a class="email-display" href="mailto:meraki.cs102@gmail.com">meraki.cs102@gmail.com</a>
+                </div>
+            </div>
+
+            <!-- RIGHT SIDE -->
+            <div class="contact-right">
+                <h3 class="form-title">Send us a Feedback</h3>
+                <p class="form-desc">
+                    If you have any suggestion, concerns, or feedback, you can send a message here. 
+                    It’s our pleasure to help you.
+                </p>
+
+                  <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+
+                    <!-- FormSubmit settings -->
+		    <!-- Web3Forms settings -->
+                    <input type="hidden" name="access_key" value="31a52701-8518-44d5-8aae-8e2ddf16f48f">
+
+                    <div class="input-row">
+                        <div class="input-group">
+                            <input type="text" id="name" name="Name" placeholder="Enter your name">
+                            <small class="error"></small>
+                        </div>
+                        <div class="input-group">
+                            <input type="email" id="email" name="Email" placeholder="Enter your email">
+                            <small class="error"></small>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <textarea id="message" name="Message" placeholder="Enter your message here"></textarea>
+                        <small class="error"></small>
+                    </div>
+
+                    <div class="input-row">
+                        <div class="input-group">
+                            <input type="text" id="genre" name="Genre Recommendation" placeholder="Recommend a Genre (Optional)">
+                        </div>
+                        <div class="input-group">
+                            <input type="text" id="movie" name="Movie Recommendation" placeholder="Movie Recommendation (Optional)">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Submit Now</button>
+                </form>
+
+                <p class="success-msg" id="successMessage"></p>
+
+            </div>
+
+        </div>
+
+
+</div>
+
+
+
+
+</body>
+</html>
+                        
